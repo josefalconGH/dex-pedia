@@ -33,13 +33,11 @@
                 </a>
                 
                 <!-- Mobile Hamburger Menu -->
-                <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-                    <!-- Screen Reader text -->
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                <div class="block w-8 h-8 cursor-pointer md:hidden" id="navbar-toggle">
+                    <svg class="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 4.5C3 4.22386 3.22386 4 3.5 4H16.5C16.7761 4 17 4.22386 17 4.5C17 4.77614 16.7761 5 16.5 5H3.5C3.22386 5 3 4.77614 3 4.5ZM3 9.5C3 9.22386 3.22386 9 3.5 9H16.5C16.7761 9 17 9.22386 17 9.5C17 9.77614 16.7761 10 16.5 10H3.5C3.22386 10 3 9.77614 3 9.5ZM3.5 14C3.22386 14 3 14.2239 3 14.5C3 14.7761 3.22386 15 3.5 15H16.5C16.7761 15 17 14.7761 17 14.5C17 14.2239 16.7761 14 16.5 14H3.5Z"/>
                     </svg>
-                </button>
+                </div>
     
                 <!-- Nav Elements-->
                 <div class="hidden w-full md:block md:w-auto" id="navbar-default">
@@ -78,7 +76,7 @@
         <section id="pokedex" class="w-full border-b-4 border-zinc-900">
             <form class="mx-8 mb-4">
                 <input type="text" id="pokemon-name" class="px-2 py-1 rounded text-gray-500 focus:border-orange-500" placeholder="Enter the name of a Pokémon">
-                <button id="search-button" class="text-white bg-gradient-to-br from-red-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-orange-500 font-medium rounded-lg text-sm px-4 py-2.5 text-center me-2 mb-2">Search</button>
+                <button id="search-button" class="text-white bg-gradient-to-br from-red-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-orange-500 font-medium rounded-lg text-sm px-2 py-2.5 text-center me-2 mb-2">Search</button>
             </form>
     
             <div class="grid grid-cols-1 md:grid-cols-4 mb-8">
@@ -169,7 +167,7 @@
         <!-- https://flowbite.com/docs/components/card/ -->
         <section id="version-section" class="mx-8 mt-6">
             <h2 class="text-2xl font-bold mb-4">Info about Pokémon game versions: </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+            <div id="version-cards" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
                 <!-- Generation 1 Card -->
                 <div class="max-w-[20rem] bg-white border border-gray-200 rounded-lg shadow bg-gradient-to-br from-gray-800 to-gray-400">
                     <img class="rounded-t-lg w-full h-48 object-cover" src="./assets/images/pokemon/gen-covers/Gen-1-Cover.jpg" alt="Gen 1 Cover" />
