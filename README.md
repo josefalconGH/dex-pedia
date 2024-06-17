@@ -1,4 +1,4 @@
-# GamerLore
+# GameLore
 
 ## Description
 Pokémon GameLore is a web application designed to leverage the PokémAPI to create a responsive service for Pokémon enthusiasts.
