@@ -15,6 +15,10 @@ Pokémon GameLore is a web application designed to leverage the PokémAPI to cre
 - [Github Repo URL](https://github.com/josefalconGH/pokemon-game-lore)
 - [Github Pages URL](https://josefalcongh.github.io/pokemon-game-lore)
 
+# Medium Articles
+## Tailwind CSS Modal
+- [Tailwind CSS and the Tailwind Modal](https://medium.com/@jfalconMDM/tailwind-css-and-the-tailwind-modal-f7642e945134)
+
 # GIFs
 ## Main Page
 ![main gif](./assets/images/gifs/Animation-00.gif)
@@ -22,7 +26,7 @@ Pokémon GameLore is a web application designed to leverage the PokémAPI to cre
 ## Search
 ![search gif](./assets/images/gifs/Animation-01.gif)
 
-## Collapsible
+## Tailwind Collapsible
 ![collapsible gif](./assets/images/gifs/Animation-02.gif)
 
 ## Ability Modal
