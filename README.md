@@ -14,8 +14,8 @@ GamerLore is a web application designed to provide fun and random facts about yo
 - Responsive Design: Enjoy a seamless experience across all devices.
 
 # Links
-- [Github Repo URL](https://github.com/BrianTib/game-facts-hub)
+- [Github Repo URL](https://github.com/josefalconGH/pokemon-game-lore)
 - [Github Pages URL](https://briantib.github.io/game-facts-hub)
 
-# Screenshots
-- TBD
+# GIFs
+- [GIF-1]
