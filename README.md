@@ -16,11 +16,14 @@ Pokémon GameLore is a web application designed to leverage the PokémAPI to cre
 - [Github Pages URL](https://josefalcongh.github.io/pokemon-game-lore)
 
 # GIFs
-- Main Page
+## Main Page
 ![main gif](./assets/images/gifs/Animation-00.gif)
-- Search
+
+## Search
 ![search gif](./assets/images/gifs/Animation-01.gif)
-- Collapsible
+
+## Collapsible
 ![collapsible gif](./assets/images/gifs/Animation-02.gif)
-- Ability Modal
+
+## Ability Modal
 ![ability modal gif](./assets/images/gifs/Animation-03.gif)
