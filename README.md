@@ -1,21 +1,22 @@
 # GamerLore
 
 ## Description
-GamerLore is a web application designed to provide fun and random facts about your favorite game characters. Whether you are a casual gamer or a hardcore fan, GamerLore offers a unique way to learn more about the characters you love from various games.
+Pokémon GameLore is a web application designed to leverage the PokémAPI to create a responsive service for Pokémon enthusiasts.
 
 ## Features
-- Character Browsing: Explore a wide range of game characters from different titles and genres.
-
-- Character Details: View detailed profiles and interesting facts about each character.
-- Random Fact Generator: Get a random fact about a game character with just one click.
-
-- Search and Filters: Easily find characters using the search bar or filter by game title, genre, and more.
-
-- Responsive Design: Enjoy a seamless experience across all devices.
+- Search for Pokémon by name
+- Browse through a list of all Pokémon
+- View detailed information about a Pokémon
+- View detailed information about a Pokémon's abilities
+- View detailed information about a Pokémon's evolution chain
+- Browse through a list of all Pokémon game generations/versions
 
 # Links
 - [Github Repo URL](https://github.com/josefalconGH/pokemon-game-lore)
-- [Github Pages URL](https://briantib.github.io/game-facts-hub)
+- [Github Pages URL](https://josefalcongh.github.io/pokemon-game-lore)
 
 # GIFs
-- [GIF-1]
+- [main gif](./assets/images/gifs/Animation-00.gif)
+- [search gif](./assets/images/gifs/Animation-01.gif)
+- [collapsible gif](./assets/images/gifs/Animation-02.gif)
+- [ability modal gif](./assets/images/gifs/Animation-03.gif)
