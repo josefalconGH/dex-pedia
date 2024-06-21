@@ -1,7 +1,7 @@
-# GameLore
+# DexPedia
 
 ## Description
-Pokémon GameLore is a web application designed to leverage the PokémAPI to create a responsive service for Pokémon enthusiasts.
+DexPedia is a Pokémon centered web application designed to leverage the PokémAPI to create a responsive service for Pokémon enthusiasts.
 
 ## Features
 - Search for Pokémon by name
