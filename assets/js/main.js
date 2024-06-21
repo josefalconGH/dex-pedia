@@ -1,15 +1,15 @@
-// Utility function to capitalize the first letter of a string
+// utility function to capitalize the first letter of a string
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-// Toggle the mobile menu
+// toggle the mobile menu
 $('#navbar-toggle').on('click', function() {
     $('#navbar-default').toggleClass('hidden');
 });
 
 $(document).ready(function() {
-    // Setup collapsible sections
+    // setup collapsible sections
     function setupCollapsible() {
         $(".collapsible").on("click", function() {
             $(this).toggleClass("active");
@@ -19,11 +19,19 @@ $(document).ready(function() {
         });
     }
 
-    // Fetch Pokémon names and populate collapsible sections
+    // fetch Pokémon names and populate collapsible sections
     async function populatePokemonNames() {
-        const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=1000");
-        const data = await response.json();
-        const pokemonList = data.results;
+        const cachedData = localStorage.getItem('pokemonList');
+        let pokemonList;
+
+        if (cachedData) {
+            pokemonList = JSON.parse(cachedData);
+        } else {
+            const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=1000");
+            const data = await response.json();
+            pokemonList = data.results;
+            localStorage.setItem('pokemonList', JSON.stringify(pokemonList));
+        }
 
         const groupSelectors = ["ab", "cd", "eg", "hj", "km", "np", "qs", "tv", "wz"];
         const groups = Object.fromEntries(groupSelectors.map(key => [key, $(`#group-${key}`)]));
@@ -57,53 +65,81 @@ $(document).ready(function() {
         console.log(groupedPokemon);
     }
 
-    // Fetch Pokémon genus
+    // fetch Pokémon genus
     async function fetchPokemonGenus(pokemonName) {
+        const cachedData = localStorage.getItem(`genus-${pokemonName}`);
+        if (cachedData) {
+            return cachedData;
+        }
+
         try {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonName.toLowerCase()}`);
             if (!response.ok) throw new Error(`Error: Unable to fetch data for ${pokemonName}`);
 
             const data = await response.json();
             const genusEntry = data.genera.find(entry => entry.language.name === "en");
-            return genusEntry ? genusEntry.genus : "Genus information not available";
+            const genus = genusEntry ? genusEntry.genus : "Genus information not available";
+            localStorage.setItem(`genus-${pokemonName}`, genus);
+            return genus;
         } catch (error) {
             console.error(error);
             return "Error fetching genus information";
         }
     }
 
-    // Fetch ability description
+    // fetch ability description
     async function fetchAbilityDescription(url) {
+        const cachedData = localStorage.getItem(url);
+        if (cachedData) {
+            return cachedData;
+        }
+
         const response = await fetch(url);
         if (!response.ok) throw new Error("Ability network response was not ok");
 
         const data = await response.json();
         const descriptionEntry = data.effect_entries.find(entry => entry.language.name === "en");
-        return descriptionEntry ? descriptionEntry.effect : "No description available.";
+        const description = descriptionEntry ? descriptionEntry.effect : "No description available.";
+        localStorage.setItem(url, description);
+        return description;
     }
 
-    // Fetch Pokémon game versions
+    // fetch Pokémon game versions
     async function fetchPokemonGameVersions(pokemonName) {
+        const cachedData = localStorage.getItem(`versions-${pokemonName}`);
+        if (cachedData) {
+            return JSON.parse(cachedData);
+        }
+
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`);
         if (!response.ok) throw new Error(`Error: Unable to fetch data for ${pokemonName}`);
 
         const data = await response.json();
-        return data.game_indices.map(index => capitalizeFirstLetter(index.version.name));
+        const gameVersions = data.game_indices.map(index => capitalizeFirstLetter(index.version.name));
+        localStorage.setItem(`versions-${pokemonName}`, JSON.stringify(gameVersions));
+        return gameVersions;
     }
 
-    // Fetch flavor text
+    // fetch flavor text
     async function fetchFlavorText(pokemonName) {
+        const cachedData = localStorage.getItem(`flavorText-${pokemonName}`);
+        if (cachedData) {
+            return JSON.parse(cachedData);
+        }
+
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonName.toLowerCase()}`);
         if (!response.ok) throw new Error(`Error: Unable to fetch flavor text for ${pokemonName}`);
 
         const data = await response.json();
-        return data.flavor_text_entries
+        const flavorTexts = data.flavor_text_entries
             .filter(entry => entry.language.name === "en")
             .slice(0, 1)
             .map(entry => entry.flavor_text.replace(/\n|\f/g, ' '));
+        localStorage.setItem(`flavorText-${pokemonName}`, JSON.stringify(flavorTexts));
+        return flavorTexts;
     }
 
-    // Fetch evolution chain
+    // fetch evolution chain
     function fetchEvolutionChain(chain) {
         const evolutions = [];
         let current = chain;
@@ -115,7 +151,7 @@ $(document).ready(function() {
         return evolutions;
     }
 
-    // Fetch Pokémon data and display on page
+    // fetch Pokémon data and display on page
     async function fetchPokemon(event) {
         event.preventDefault();
 
@@ -134,10 +170,19 @@ $(document).ready(function() {
 
         try {
             const name = $("#pokemon-name").val().toLowerCase();
-            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
-            if (!response.ok) throw new Error("Network response was not ok");
+            const cachedData = localStorage.getItem(`pokemonData-${name}`);
+            let data;
 
-            const data = await response.json();
+            if (cachedData) {
+                data = JSON.parse(cachedData);
+            } else {
+                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+                if (!response.ok) throw new Error("Network response was not ok");
+
+                data = await response.json();
+                localStorage.setItem(`pokemonData-${name}`, JSON.stringify(data));
+            }
+
             localStorage.setItem('lastPokemon', name);
 
             const pokemonName = capitalizeFirstLetter(data.name);
@@ -250,16 +295,16 @@ $(document).ready(function() {
         $('#ability-modal').addClass('hidden');
     }
 
-    // Initialize collapsible sections and populate Pokémon names
+    // initialize collapsible sections and populate Pokémon names
     setupCollapsible();
     populatePokemonNames();
 
-    // Load the last searched Pokémon or Bulbasaur if none is found
+    // load the last searched Pokémon or Bulbasaur if none is found
     const lastPokemon = localStorage.getItem('lastPokemon') || 'bulbasaur';
     $("#pokemon-name").val(lastPokemon);
     fetchPokemon(new Event('submit'));
 
-    // Event delegation and listeners
+    // event delegation and listeners
     $(document).on("click", "#collapsible-search", function(event) {
         const pokemonName = $(this).text().toLowerCase();
         $("#pokemon-name").val(pokemonName);
