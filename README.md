@@ -6,9 +6,7 @@ DexPedia is a Pokémon centered web application designed to leverage the PokémA
 ## Features
 - Search for Pokémon by name
 - Browse through a list of all Pokémon
-- View detailed information about a Pokémon
-- View detailed information about a Pokémon's abilities
-- View detailed information about a Pokémon's evolution chain
+- View detailed information about a Pokémon (Types, Stats, Abilities, etc.)
 - Browse through a list of all Pokémon game generations/versions
 
 # Links
