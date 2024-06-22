@@ -12,6 +12,8 @@ DexPedia is a Pokémon centered web application designed to leverage the PokéAP
 # Links
 - [Github Repo URL](https://github.com/josefalconGH/pokemon-game-lore)
 - [Github Pages URL](https://josefalcongh.github.io/pokemon-game-lore)
+- [Figma Design](https://www.figma.com/design/LixOr30OMrNPWnfDahFL7H/DexPedia?node-id=0-1&t=43TlQ4C1WrHqg8Th-0)
+- [PokéAPI](https://pokeapi.co)
 
 # Medium Articles
 ## Tailwind CSS Modal
