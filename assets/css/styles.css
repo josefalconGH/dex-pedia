@@ -82,12 +82,14 @@
     .poke-search-input {
         width: 80%; 
         border: solid 2px #6588CE; /* border color of input field */
+        color: #6588CE; /* text color of input field */
     }
 
     /* border color of input field when focused */
     .poke-search-input:focus {
-        border: solid 2px #000b3b; /* border color of input field when focused */
+        border: solid 2px #202a5a; /* border color of input field when focused */
         outline: none; /* remove default tailwind outline */
+        color: #202a5a; /* text color of input field when focused */
     }
 
     /* button gradient background */
