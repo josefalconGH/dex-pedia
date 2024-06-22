@@ -14,6 +14,15 @@
 }
 
 /* element selectors */
+    h2 {
+        /* limit the length of the box containing the text */
+        width: 100%;
+    }
+
+    h2 .card-header {
+        width: 100%;
+    }
+
     html, body {
         height: 100%;
         width: 100%;
@@ -28,22 +37,19 @@
         overflow-x: hidden;
     }
 
-    h2 {
-        /* limit the length of the box containing the text */
-        width: 100%;
-    }
-
-    h2 .card-header {
-        width: 100%;
-    }
+    /* main {
+        background: #747474;
+    } */
 
 /* class selectors */
+    /* header bg gradient */
     .custom-gradient-bg {
         /* background */
         background: linear-gradient(360deg, #4268be 20.5%, #000b3b 97.54%), #5c87df;
-        border-bottom: solid 2px #6588CE;   
+        border-bottom: solid 2px #6588CE; /* border at the bottom of the hero banner */ 
     }
 
+    /* dexpedia logo */
     .dexpedia-logo-long {
         /* reduces size of image to 25% */
         width: 40%;
@@ -55,9 +61,51 @@
         background-image: url("../images/related-img/logos/dex-pedia-hero-no-title.png");
         background-position: center; /* position background image */
         background-size: cover; /* cover means image will cover the entire container */
+        border-bottom: solid 2px #6588CE; /* border at the bottom of the hero banner */
         height: 172px; /* height of hero banner */
         position: relative;
         margin-top: 4rem; /* adjust this value to match the height of your navbar */
+    }
+
+    /* search form styling */
+    .form {
+        display: flex;
+        align-items: center;
+    }
+
+    /* pokedex background */
+    .pokedex {
+        border-bottom: solid 2px #6588CE; /* border at the bottom of the hero banner */
+    }
+
+    /* pokedex search input styling */
+    .poke-search-input {
+        width: 80%; 
+        border: solid 2px #6588CE; /* border color of input field */
+    }
+
+    /* border color of input field when focused */
+    .poke-search-input:focus {
+        border: solid 2px #000b3b; /* border color of input field when focused */
+        outline: none; /* remove default tailwind outline */
+    }
+
+    /* button gradient background */
+    .button-gradient-bg {
+        background: linear-gradient(215deg, #6588CE 0%, #000b3b 100%);
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+
+    /* button gradient background hover */
+    .button-gradient-bg:hover {
+        background: linear-gradient(215deg, #000b3b 0%, #6588CE 100%);
+    }
+
+    /* button gradient border focus */
+    .button-gradient-bg:focus {
+        border: solid 2px #6588CE;
     }
 
     .collapsible {
