@@ -21,16 +21,14 @@
 <body>
     <!-- header section -->
     <header id="home">
-        <nav class="bg-zinc-950 fixed w-full z-20 top-0 left-0">
-            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4 px-6">
+        <nav class="custom-gradient-bg fixed w-full z-20 top-0 left-0">
+            <div class="max-w-screen-xl flex flex-wrap items-center text-right justify-between mx-auto py-2 px-6">
                 <!-- Logo -->
-                <a href="#" class="flex items-center rtl:space-x-reverse">
-                    <span class="text-2xl font-semibold whitespace-nowrap text-white">Game</span>
-                    <span class="text-red-600 text-2xl font-semibold whitespace-nowrap">Lore</span>
-                </a>
-                
+                <!-- link to DexPedia image -->
+                <img src="./assets/images/related-img/logos/dex-pedia-logo-long.png" alt="DexPedia Logo Long" class="dexpedia-logo-long whitespace-nowrap">
+
                 <!-- Mobile Hamburger Menu -->
-                <div class="block w-8 h-8 cursor-pointer md:hidden" id="navbar-toggle">
+                <div class="block w-8 h-9 cursor-pointer md:hidden" id="navbar-toggle">
                     <svg class="w-full h-full text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M3 4.5C3 4.22386 3.22386 4 3.5 4H16.5C16.7761 4 17 4.22386 17 4.5C17 4.77614 16.7761 5 16.5 5H3.5C3.22386 5 3 4.77614 3 4.5ZM3 9.5C3 9.22386 3.22386 9 3.5 9H16.5C16.7761 9 17 9.22386 17 9.5C17 9.77614 16.7761 10 16.5 10H3.5C3.22386 10 3 9.77614 3 9.5ZM3.5 14C3.22386 14 3 14.2239 3 14.5C3 14.7761 3.22386 15 3.5 15H16.5C16.7761 15 17 14.7761 17 14.5C17 14.2239 16.7761 14 16.5 14H3.5Z"/>
                     </svg>
@@ -60,11 +58,8 @@
     </header>
 
     <!-- hero image -->
-    <div class="relative w-full mt-5 h-96 overflow-hidden border-b-2 border-gray-500 hero-banner">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 flex flex-col mt-12 items-center justify-center">
-            <h1 class="text-white text-center text-6xl font-bold" style="background: radial-gradient(circle, rgba(80, 80, 80, 0.5), transparent);">Welcome to Pokémon Game<span class="text-red-600">Lore!</span></h1>
-            <h3 class="text-gray-300 text-xl underline mt-3 p-2 rounded" style="background: radial-gradient(circle, rgba(80, 80, 80, 0.5), transparent);">On this page you can search for Pokédex entries that include types, base stats, abilities, evolution chains, and more!</h3>
-            <h3 class="text-gray-300 text-xl underline mt-1 p-2 rounded" style="background: radial-gradient(circle, rgba(80, 80, 80, 0.5), transparent);">You can also find information about all game-versions of Pokémon!</h3>
+    <div class="relative w-full overflow-hidden border-b-2 border-gray-500 hero-banner">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 flex flex-col items-center justify-center">
         </div>
     </div>
 

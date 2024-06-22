@@ -14,90 +14,86 @@
 }
 
 /* element selectors */
-html, body {
-    height: 100%;
-    width: 100%;
-}
+    html, body {
+        height: 100%;
+        width: 100%;
+    }
 
-body {
-    background: var(--background);
-    color: var(--text);
-    font-family: 'Hammersmith One', sans-serif;
-    font-size: 18px;
-    touch-action: manipulation;
-    overflow-x: hidden;
-}
+    body {
+        background: var(--background);
+        color: var(--text);
+        font-family: 'Hammersmith One', sans-serif;
+        font-size: 18px;
+        touch-action: manipulation;
+        overflow-x: hidden;
+    }
 
-h2 {
-    /* limit the length of the box containing the text */
-    width: 100%;
-}
+    h2 {
+        /* limit the length of the box containing the text */
+        width: 100%;
+    }
 
-h2 .card-header {
-    width: 100%;
-}
+    h2 .card-header {
+        width: 100%;
+    }
 
 /* class selectors */
-/* hero background */
-.hero-banner {
-background-image: url("../images/pokemon/pokemon-header.jpg");
-background-position: top; /* position background image */
-background-size: cover; /* cover means image will cover the entire container */
-height: 370px; /* height of hero banner */
-position: relative;
-}
-
-.collapsible {
-    color: #eeeeee;
-    cursor: pointer;
-    padding: 12px;
-    width: 100%;
-    border: none;
-    text-align: center;
-    outline: none;
-    font-size: 15px;
-}
-
-.active, .collapsible:hover {
-    background-color: #adadad;
-}
-
-.content {
-    display: none;
-    overflow: hidden;
-    padding: 0 18px;
-}
-
-.content p {
-    cursor: pointer;
-}
-
-.wrapper { 
-    width: 100%;
-    overflow-y:scroll; 
-    position:relative;
-    height: 200px;
-}
-
-/* increase the size of the sprite in source #pokemon-sprite by 50% */
-#pokemon-sprite {
-    width: 25%;
-}
-
-/* media queries */
-/* media query for mobile devices */
-@media only screen and (max-width: 600px) {
-    h1 {
-        font-size: 1.5em;
-        text-align: center;
+    .custom-gradient-bg {
+        /* background */
+        background: linear-gradient(360deg, #4268be 20.5%, #000b3b 97.54%), #5c87df;
+        border-bottom: solid 2px #6588CE;   
     }
 
-    h3 {
-        font-size: 1em;
-        text-align: center;
+    .dexpedia-logo-long {
+        /* reduces size of image to 25% */
+        width: 40%;
+        height: auto; /* Maintain the aspect ratio */
     }
 
+    /* hero background */
     .hero-banner {
-        height: 300px;
+        background-image: url("../images/related-img/logos/dex-pedia-hero-no-title.png");
+        background-position: center; /* position background image */
+        background-size: cover; /* cover means image will cover the entire container */
+        height: 172px; /* height of hero banner */
+        position: relative;
+        margin-top: 4rem; /* adjust this value to match the height of your navbar */
     }
-}
+
+    .collapsible {
+        color: #eeeeee;
+        cursor: pointer;
+        padding: 12px;
+        width: 100%;
+        border: none;
+        text-align: center;
+        outline: none;
+        font-size: 15px;
+    }
+
+    .active, .collapsible:hover {
+        background-color: #adadad;
+    }
+
+    .content {
+        display: none;
+        overflow: hidden;
+        padding: 0 18px;
+    }
+
+    .content p {
+        cursor: pointer;
+    }
+
+    .wrapper { 
+        width: 100%;
+        overflow-y:scroll; 
+        position:relative;
+        height: 200px;
+    }
+
+/* id selectors */
+    /* increase the size of the sprite in source #pokemon-sprite by 50% */
+    #pokemon-sprite {
+        width: 25%;
+    }
