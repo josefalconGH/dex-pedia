@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Pokémon Game Lore</title>
 
     <!-- Hammersmith Font -->
@@ -20,7 +22,7 @@
 
 <body>
     <!-- header section -->
-    <header id="home">
+    <header class="header-iphone-sa-inset" id="home">
         <nav class="custom-gradient-bg fixed w-full z-20 top-0 left-0">
             <div class="max-w-screen-xl flex flex-wrap items-center text-right justify-between mx-auto py-2 px-6">
                 <!-- Logo -->
@@ -58,13 +60,13 @@
     </header>
 
     <!-- hero image -->
-    <div class="relative w-full overflow-hidden border-b-2 border-gray-500 hero-banner">
+    <div class="hero-iphone-sa-inset w-full overflow-hidden border-b-2 border-gray-500 hero-banner">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 flex flex-col items-center justify-center">
         </div>
     </div>
 
     <!-- main section -->
-    <main class="mt-8 text-gray-400">
+    <main class="main-iphone-sa-inset mt-8 text-gray-400">
         <section id="pokedex" class="w-full border-b-4 border-zinc-900">
             <form class="mx-8 mb-4">
                 <input type="text" id="pokemon-name" class="px-2 py-1 rounded text-gray-500 focus:border-orange-500" placeholder="Enter the name of a Pokémon">
@@ -310,7 +312,7 @@
     </main>
 
     <!-- footer section -->
-    <footer>
+    <footer class="footer-iphone-sa-inset">
         <!-- PokeAPI section -->
         <section id="api" class="border-t-4 border-b-4 border-zinc-900 bg-gradient-to-b from-black to-zinc-900/[.5]">
             <div class="w-full flex flex-col my-10 gap-5 items-center mx-auto">

@@ -38,6 +38,19 @@
     }
 
 /* class selectors */
+    .header-iphone-sa-inset {
+        padding-top: env(safe-area-inset-top);
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+    }
+
+    .main-iphone-sa-inset {
+        padding-top: 16px;
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+        padding-bottom: env(safe-area-inset-bottom); 
+    }
+
     .custom-gradient-bg {
         /* background */
         background: linear-gradient(360deg, #4268be 20.5%, #000b3b 97.54%), #5c87df;
