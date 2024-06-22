@@ -8,6 +8,11 @@ $('#navbar-toggle').on('click', function() {
     $('#navbar-default').toggleClass('hidden');
 });
 
+// hide the mobile menu when a link is clicked
+$('#navbar-default a').on('click', function() {
+    $('#navbar-default').addClass('hidden');
+});
+
 $(document).ready(function() {
     // setup collapsible sections
     function setupCollapsible() {
