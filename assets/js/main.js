@@ -43,29 +43,42 @@ $(document).ready(function() {
         const groups = Object.fromEntries(groupSelectors.map(key => [key, $(`#group-${key}`)]));
         const groupedPokemon = Object.fromEntries(groupSelectors.map(key => [key, []]));
 
-        pokemonList.forEach(pokemon => {
+        for (const pokemon of pokemonList) {
             const name = capitalizeFirstLetter(pokemon.name);
             for (const key of groupSelectors) {
                 if (name.match(new RegExp(`^[${key.toUpperCase()}${key}]`))) {
-                    groupedPokemon[key].push(name);
+                    groupedPokemon[key].push(pokemon);
                     break;
                 }
             }
-        });
+        }
 
         for (const key of groupSelectors) {
-            groupedPokemon[key].sort().forEach(name => {
+            groupedPokemon[key].sort((a, b) => a.name.localeCompare(b.name));
+            for (const pokemon of groupedPokemon[key]) {
+                const name = capitalizeFirstLetter(pokemon.name);
+                const response = await fetch(pokemon.url);
+                const data = await response.json();
+                const spriteUrl = data.sprites.front_default;
+
+                const pokemonElement = $("<div>").addClass("pokemon-item");
                 $("<p>")
-                    .attr("id", "collapsible-search")
                     .addClass("pokemon-link")
                     .text(name)
                     .on("click", function() {
-                        const content = $(this).parent();
+                        const content = $(this).parent().parent();
                         content.css("display", "none");
                         content.prev().removeClass("active");
                     })
-                    .appendTo(groups[key]);
-            });
+                    .appendTo(pokemonElement);
+                $("<img>")
+                    .attr("src", spriteUrl)
+                    .attr("alt", name)
+                    .addClass("pokemon-sprite w-8 h-8")
+                    .appendTo(pokemonElement);
+
+                groups[key].append(pokemonElement);
+            }
         }
 
         console.log(groupedPokemon);

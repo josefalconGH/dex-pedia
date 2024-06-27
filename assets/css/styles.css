@@ -135,10 +135,22 @@
         background-color: #adadad;
     }
 
+    .pokemon-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .pokemon-name {
+        margin-left: auto;
+    }
+
     .content {
         display: none;
         overflow: hidden;
-        padding: 0 18px;
+        margin-top: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
     .content p {
