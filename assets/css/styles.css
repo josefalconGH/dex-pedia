@@ -56,6 +56,16 @@
         height: auto; /* Maintain the aspect ratio */
     }
 
+    /* mobile menu styling */
+    .custom-menu {
+        color: #eeeeee; /* color of mobile menu */
+    }
+
+    .custom-menu ul li:hover {
+        background-color: #cacaca50; /* background color of mobile menu when hovered */
+        width: 100%; /* width of mobile menu when hovered */
+    }
+
     /* hero background */
     .hero-banner {
         background-image: url("../images/related-img/logos/dex-pedia-hero-no-title.png");
@@ -81,15 +91,15 @@
     /* pokedex search input styling */
     .poke-search-input {
         width: 80%; 
-        border: solid 2px #6588CE; /* border color of input field */
-        color: #6588CE; /* text color of input field */
+        border: solid 2px #aaaaaa; /* border color of input field */
+        color: #aaaaaa; /* text color of input field */
     }
 
     /* border color of input field when focused */
     .poke-search-input:focus {
-        border: solid 2px #202a5a; /* border color of input field when focused */
+        border: solid 2px #6588CE; /* border color of input field when focused */
         outline: none; /* remove default tailwind outline */
-        color: #202a5a; /* text color of input field when focused */
+        color: #445c8b; /* text color of input field when focused */
     }
 
     /* button gradient background */

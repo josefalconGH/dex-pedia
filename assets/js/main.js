@@ -19,8 +19,9 @@ $(document).ready(function() {
         $(".collapsible").on("click", function() {
             $(this).toggleClass("active");
             const content = $(this).next();
-            $(".content").css("display", "none");
-            content.css("display", content.css("display") === "block" ? "none" : "block");
+            
+            // Slide toggle with a faster transition speed (e.g., 250 milliseconds)
+            content.slideToggle(250);
         });
     }
 
