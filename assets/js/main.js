@@ -66,9 +66,9 @@ $(document).ready(function() {
                     .addClass("pokemon-link")
                     .text(name)
                     .on("click", function() {
-                        const content = $(this).parent().parent();
-                        content.css("display", "none");
-                        content.prev().removeClass("active");
+                        const pokemonName = $(this).text().toLowerCase();
+                        $("#pokemon-name").val(pokemonName);
+                        fetchPokemon(new Event('submit'));
                     })
                     .appendTo(pokemonElement);
                 $("<img>")
